@@ -30,7 +30,7 @@ public class ItemCell extends Item {
 	@SideOnly(Side.CLIENT)
 	private Icon[] icons;
 
-	public void registerIcons(IconRegister iconRegister) {
+	/*public void registerIcons(IconRegister iconRegister) {
 		itemIcon = iconRegister.registerIcon("Futurology:cell");
 	}
 
@@ -51,5 +51,5 @@ public class ItemCell extends Item {
 		for (int x = 0; x < 2; x++) {
 			par3List.add(new ItemStack(this, 1, x));
 		}
-	}
+	}*/
 }

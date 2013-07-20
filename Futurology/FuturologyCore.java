@@ -37,7 +37,7 @@ public class FuturologyCore {
 			CreativeTabs.tabMaterials).setUnlocalizedName("Cell");
 	public final static Item plasmaCell = new ItemCell(12302).setCreativeTab(
 			CreativeTabs.tabMaterials).setUnlocalizedName("plasmaCell");
-	public final static Item glue = new ItemCell(12303).setCreativeTab(
+	public final static Item glue = new ItemGlue(12303).setCreativeTab(
 			CreativeTabs.tabMaterials).setUnlocalizedName("glue");
 	public final static Item tape = new ItemTape(12304).setCreativeTab(
 			CreativeTabs.tabMaterials).setUnlocalizedName("tape");
@@ -75,7 +75,7 @@ public class FuturologyCore {
 		GameRegistry.registerBlock(tungstenOre, "Tore");
 
 		// Registering the Ingot item
-		LanguageRegistry.addName(tungstenIngot, "§8Tungsten Ingot");
+		LanguageRegistry.addName(tungstenIngot, "ï¿½8Tungsten Ingot");
 
 		// Registering Cell and Plasma Cell
 		LanguageRegistry.addName(cell, "Empty Cell");

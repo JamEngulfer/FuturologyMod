@@ -30,9 +30,9 @@ public class ItemCell extends Item {
 	@SideOnly(Side.CLIENT)
 	private Icon[] icons;
 
-	/*public void registerIcons(IconRegister iconRegister) {
+	public void registerIcons(IconRegister iconRegister) {
 		itemIcon = iconRegister.registerIcon("Futurology:cell");
-	}
+	}/*
 
 	public Icon getIconFromDamage(int par1) {
 		return icons[par1];

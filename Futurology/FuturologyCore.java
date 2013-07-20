@@ -22,7 +22,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "Futurology", name = "Futurology", version = "1.0.0")
+@Mod(modid = FuturologyCore.modid, name = "Futurology", version = "1.0.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class FuturologyCore {
 
@@ -44,7 +44,7 @@ public class FuturologyCore {
 	public final static Item graphene = new ItemGraphene(12305).setCreativeTab(
 			CreativeTabs.tabMaterials).setUnlocalizedName("graphene");
 	public final static Block tungstenForge = new BlockForge(501, 1,
-			Material.rock).setUnlocalizedName("forgeFront");
+			Material.rock).setUnlocalizedName("forge");
 	// Item Stacks for the crafting below!
 	ItemStack tungtstenIngotStack = new ItemStack(tungstenIngot);
 	ItemStack tungstenOreStack = new ItemStack(tungstenOre);
@@ -57,7 +57,10 @@ public class FuturologyCore {
 	
 	//Will be used for config options, the in-game difficulty selection button!
 	public static boolean HardMode;
-
+	
+	
+	public static final String modid = "Futurology";
+	
 	@PreInit
 	
 

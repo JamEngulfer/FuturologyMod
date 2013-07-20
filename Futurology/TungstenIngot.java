@@ -2,8 +2,7 @@ package Futurology;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
-import AlagaesiaCraft.EnumModMaterial;
-import AlagaesiaCraft.RiderSwords;
+
 
 public class TungstenIngot extends Item{
 

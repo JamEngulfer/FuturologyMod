@@ -1,11 +1,12 @@
 package Futurology;
 
 import java.util.Random;
+
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.block.material.Material;
+import Futurology.FuturologyCore;
 
 public class TungstenOre extends Block {
         public TungstenOre(int id, int texture, Material material) {

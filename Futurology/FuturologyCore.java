@@ -59,13 +59,7 @@ public class FuturologyCore {
 	public static boolean HardMode;
 
 	@PreInit
-	public void HateGreg() throws Exception {
-		if (Loader.isModLoaded("GregTech_Addon")) {
-			throw new Exception(
-					"GregTech doesn't work with this mod, pick a side please, thanks! This mod was made to offer a replacement for the arrogant nerfing of Gregorius, and as such, our mods won't coincide! Vote DtrollMC for President!");
-
-		}
-	}
+	
 
 	@Init
 	public void load(FMLInitializationEvent event) throws Exception {
@@ -118,8 +112,7 @@ public class FuturologyCore {
 		LanguageRegistry.addName(plasmaCell, "Plasma Cell");
 		GameRegistry.registerItem(plasmaCell, "plasmaCell");
 
-		// What an awesome method yes?
-		HateGreg();
+		
 	}
 
 }

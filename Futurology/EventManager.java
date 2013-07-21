@@ -32,8 +32,10 @@ public class EventManager implements IWorldGenerator {
     }
 
     private void generateSurface(World world, Random random, int x, int z)
-    {
+    {		
+    	//Objective is to make Uranium and Thorium rare, to flesh out the end game power gen.
          this.addOreSpawn(FuturologyCore.tungstenOre, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
+         this.addOreSpawn(FuturologyCore.thoriumOre, world, random, x, z, 16, 16, 4 + random.nextInt(3), 5, 15, 50);
     }
 
     private void generateNether(World world, Random random, int x, int z)

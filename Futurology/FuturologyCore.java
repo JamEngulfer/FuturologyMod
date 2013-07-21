@@ -60,6 +60,7 @@ public class FuturologyCore {
 	
 	
 	public static final String modid = "Futurology";
+	EventManager em = new EventManager();
 	
 	@PreInit
 	
@@ -95,7 +96,7 @@ public class FuturologyCore {
 		GameRegistry.registerBlock(tungstenForge, "forge");
 
 		GameRegistry.registerTileEntity(Futurology.TileEntityForge.class,
-				"13989");
+				"ForgeTileEntity");
 
 		// If hardmode is off, which it is unless changed, these are the
 		// recipes.
@@ -114,6 +115,8 @@ public class FuturologyCore {
 
 		LanguageRegistry.addName(plasmaCell, "Plasma Cell");
 		GameRegistry.registerItem(plasmaCell, "plasmaCell");
+		
+		GameRegistry.registerWorldGenerator(em);
 
 		
 	}

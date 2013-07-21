@@ -3,12 +3,17 @@ package Futurology;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.common.registry.BlockProxy;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -21,7 +26,8 @@ import cpw.mods.fml.relauncher.SideOnly;
  * -Interaction with Buildcraft power infrastructure!
  * 
  */
-public class BlockForge extends Block implements BlockProxy {
+public class BlockForge extends BlockContainer implements BlockProxy {
+	private static final int Meta = 3;
 	@SideOnly(Side.CLIENT)
 	private Icon topIcon;
 	private Icon bottomIcon;
@@ -64,5 +70,52 @@ public class BlockForge extends Block implements BlockProxy {
 	public int idDropped(int par1, Random random, int par2) {
 		return FuturologyCore.tungstenIngot.itemID;
 	}
+	 
+	 @Override
+		public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entityLiving, ItemStack itemStack)
+		{
+			int angle = MathHelper.floor_double((entityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+			int change = 3;
+
+			switch (angle)
+			{
+				case 0:
+					change = 2;
+					break;
+
+				case 1:
+					change = 5;
+					break;
+
+				case 2:
+					change = 3;
+					break;
+
+				case 3:
+					change = 4;
+					break;
+			}
+			
+			getIcon(change, Meta);
+			world.setBlockMetadataWithNotify(x, y, z, change, 3);
+		}
+	 
+	 public static boolean rotateBlock(World worldObj, int x, int y, int z, ForgeDirection axis, int mask)
+		{
+			int rotMeta = worldObj.getBlockMetadata(x, y, z);
+			int masked = rotMeta & ~mask;
+			ForgeDirection orientation = ForgeDirection.getOrientation(rotMeta & mask);
+			ForgeDirection rotated = orientation.getRotation(axis);
+			worldObj.setBlockMetadataWithNotify(x, y, z, rotated.ordinal() & mask | masked, 3);
+			return true;
+		}
+
+	@Override
+	public TileEntity createNewTileEntity(World world) {
+		// TODO Auto-generated method stub
+		return new TileEntityForge();
+	} 
+	
+	
 
 }
